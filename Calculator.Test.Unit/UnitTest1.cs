@@ -115,5 +115,19 @@ namespace Calculator.Test.Unit
             Assert.That(uut.Divide(div1, div2), Is.EqualTo(result));
         }
 
+        [TestCase(-2, -4, -6)]
+        [TestCase(2, 10.4, 12.4)]
+        [TestCase(0.1, 0.9, 1)]
+        public void AddTwoNumbers_CheckAccumulator_AccumulatorIsRes(double add1, double add2, double res)
+        {
+            uut.Add(add1, add2);
+            Assert.That(uut._Accumulator, Is.EqualTo(res));
+        }
+        [TestCase(2, 4, 0.5)]
+        public void Divide_TwoNumbers_AccumulatorIsRes(double div1, double div2, double res)
+        {
+            uut.Divide(div1, div2);
+            Assert.That(uut._Accumulator, Is.EqualTo(res));
+        }
     }
 }
