@@ -114,5 +114,6 @@ namespace Calculator.Test.Unit
         {
             Assert.That(uut.Divide(div1, div2), Is.EqualTo(result));
         }
+
     }
 }
