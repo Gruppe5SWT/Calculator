@@ -124,10 +124,11 @@ namespace Calculator.Test.Unit
             Assert.That(uut._Accumulator, Is.EqualTo(res));
         }
         [TestCase(2, 4, 0.5)]
+        [TestCase(25, 3, 8.333)]
         public void Divide_TwoNumbers_AccumulatorIsRes(double div1, double div2, double res)
         {
             uut.Divide(div1, div2);
-            Assert.That(uut._Accumulator, Is.EqualTo(res));
+            Assert.That(uut._Accumulator, Is.EqualTo(res).Within(0.05));
         }
     }
 }
